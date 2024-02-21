@@ -1,0 +1,43 @@
+import random
+
+
+
+books = [
+    {"title": "The Alchemist", "author": "Paulo Coelho", "genre": " Adventure", 'link':"https://en.wikipedia.org/wiki/The_Alchemist_(novel)"},
+    {"title": "The Da Vinci Code", "author": "Dan Brown", "genre": "Mystery",'link':"https://en.wikipedia.org/wiki/The_Da_Vinci_Code"},
+
+    {"title": "Pride and Prejudice", "author": "Jane Austen", "genre": " Romance", 'link':"https://en.wikipedia.org/wiki/Pride_and_Prejudice"},
+    {"title": "Romeo and Juliet", "author": " William Shakespeare", "genre": "Romance",'link':"https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/read/"},
+    
+    {"title": "Me Before You", "author": "  Jojo Moyes", "genre": "Romance",'link':"https://www.goodreads.com/book/show/17347634-me-before-you"},
+    {"title": "outlander", "author": "  Diana Gabaldon", "genre": "Romance",'link':"https://www.goodreads.com/book/show/10964.Outlander"},
+    {"title": "Gone Girl", "author": "Gillian Flynn", "genre": "Thriller",'link':"https://www.goodreads.com/book/show/10964.Outlander"},
+    {"title": "The Da Vinci Code", "author": " Dan Brown", "genre": "Thriller",'link':"https://www.goodreads.com/book/show/10964.Outlander"},
+    {"title": "The Road", "author": "Cormac McCarthy", "genre": "Adventure",'link':"https://www.goodreads.com/book/show/10964.Outlander"},
+    {"title": "The Jungle Book", "author": "Rudyard Kipling ", "genre": "Adventure",'link':"https://www.goodreads.com/book/show/10964.Outlander"},
+    {"title": "The Three Musketeers", "author": " Alexandre Dumas", "genre": "Adventure",'link':"https://www.goodreads.com/book/show/10964.Outlander"},
+    {"title": "Where the Red Fern Grows", "author": " Wilson Rawls", "genre": "Adventure",'link':"https://www.goodreads.com/book/show/10964.Outlander"}]
+   
+
+def recommend_book(preferred_genre):
+   
+    matching_books = [book for book in books if preferred_genre.lower() in book["genre"].lower()]
+
+   
+    if matching_books:
+        
+        recommended_book = random.choice(matching_books)
+        print(f"We recommend \"{recommended_book['title']}\" by {recommended_book['author']} in the {preferred_genre} genre.")
+    else:
+        print("Sorry, no books found in the preferred genre.")
+
+print("HELLO!") 
+print("Welcome to book recommendation system")
+user_genre_preference = input("Enter your preferred book genre (/Romance/Adventure/Thriller/Mystery): ")
+
+
+recommend_book(user_genre_preference)
+
+
+print(" Please search again if you are not satisfied with this suggestion")
+print("Thankyou! HAVE A NICE DAY")
